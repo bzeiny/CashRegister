@@ -34,9 +34,6 @@ namespace CashRegister
             this.ballLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.footballTextBox = new System.Windows.Forms.TextBox();
-            this.cleatsTextBox = new System.Windows.Forms.TextBox();
-            this.jerseyTextBox = new System.Windows.Forms.TextBox();
             this.calculateButton = new System.Windows.Forms.Button();
             this.receiptLabel = new System.Windows.Forms.Label();
             this.subLabel = new System.Windows.Forms.Label();
@@ -52,6 +49,12 @@ namespace CashRegister
             this.taxLabel2 = new System.Windows.Forms.Label();
             this.totalLabel2 = new System.Windows.Forms.Label();
             this.changeLabel1 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             this.SuspendLayout();
             // 
             // footyLabel
@@ -70,7 +73,7 @@ namespace CashRegister
             // 
             this.ballLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ballLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ballLabel.Location = new System.Drawing.Point(-4, 32);
+            this.ballLabel.Location = new System.Drawing.Point(-3, 39);
             this.ballLabel.Name = "ballLabel";
             this.ballLabel.Size = new System.Drawing.Size(161, 29);
             this.ballLabel.TabIndex = 1;
@@ -81,7 +84,7 @@ namespace CashRegister
             // 
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(-10, 62);
+            this.label1.Location = new System.Drawing.Point(-10, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 29);
             this.label1.TabIndex = 2;
@@ -93,37 +96,12 @@ namespace CashRegister
             // 
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(2, 91);
+            this.label2.Location = new System.Drawing.Point(2, 103);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 29);
+            this.label2.Size = new System.Drawing.Size(143, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Number Of Jerseys:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // footballTextBox
-            // 
-            this.footballTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.footballTextBox.Location = new System.Drawing.Point(163, 41);
-            this.footballTextBox.Name = "footballTextBox";
-            this.footballTextBox.Size = new System.Drawing.Size(100, 20);
-            this.footballTextBox.TabIndex = 4;
-            // 
-            // cleatsTextBox
-            // 
-            this.cleatsTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cleatsTextBox.Location = new System.Drawing.Point(163, 71);
-            this.cleatsTextBox.Name = "cleatsTextBox";
-            this.cleatsTextBox.Size = new System.Drawing.Size(100, 20);
-            this.cleatsTextBox.TabIndex = 5;
-            // 
-            // jerseyTextBox
-            // 
-            this.jerseyTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jerseyTextBox.Location = new System.Drawing.Point(163, 100);
-            this.jerseyTextBox.Name = "jerseyTextBox";
-            this.jerseyTextBox.Size = new System.Drawing.Size(100, 20);
-            this.jerseyTextBox.TabIndex = 6;
-            this.jerseyTextBox.TextChanged += new System.EventHandler(this.jerseyTextBox_TextChanged);
             // 
             // calculateButton
             // 
@@ -143,13 +121,13 @@ namespace CashRegister
             // 
             this.receiptLabel.BackColor = System.Drawing.Color.White;
             this.receiptLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.receiptLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.receiptLabel.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.receiptLabel.ForeColor = System.Drawing.Color.Black;
             this.receiptLabel.Location = new System.Drawing.Point(303, 39);
             this.receiptLabel.Name = "receiptLabel";
             this.receiptLabel.Size = new System.Drawing.Size(212, 313);
             this.receiptLabel.TabIndex = 8;
-            this.receiptLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.receiptLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // subLabel
             // 
@@ -212,7 +190,7 @@ namespace CashRegister
             // changeLabel
             // 
             this.changeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.changeLabel.Location = new System.Drawing.Point(12, 317);
+            this.changeLabel.Location = new System.Drawing.Point(4, 319);
             this.changeLabel.Name = "changeLabel";
             this.changeLabel.Size = new System.Drawing.Size(100, 23);
             this.changeLabel.TabIndex = 15;
@@ -246,39 +224,60 @@ namespace CashRegister
             // 
             // subLabel2
             // 
-            this.subLabel2.AutoSize = true;
             this.subLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.subLabel2.Location = new System.Drawing.Point(234, 157);
+            this.subLabel2.Location = new System.Drawing.Point(139, 161);
             this.subLabel2.Name = "subLabel2";
-            this.subLabel2.Size = new System.Drawing.Size(0, 13);
+            this.subLabel2.Size = new System.Drawing.Size(104, 13);
             this.subLabel2.TabIndex = 18;
+            this.subLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // taxLabel2
             // 
-            this.taxLabel2.AutoSize = true;
             this.taxLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.taxLabel2.Location = new System.Drawing.Point(234, 180);
+            this.taxLabel2.Location = new System.Drawing.Point(135, 184);
             this.taxLabel2.Name = "taxLabel2";
-            this.taxLabel2.Size = new System.Drawing.Size(0, 13);
+            this.taxLabel2.Size = new System.Drawing.Size(107, 13);
             this.taxLabel2.TabIndex = 19;
+            this.taxLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // totalLabel2
             // 
-            this.totalLabel2.AutoSize = true;
             this.totalLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.totalLabel2.Location = new System.Drawing.Point(234, 203);
+            this.totalLabel2.Location = new System.Drawing.Point(138, 207);
             this.totalLabel2.Name = "totalLabel2";
-            this.totalLabel2.Size = new System.Drawing.Size(0, 13);
+            this.totalLabel2.Size = new System.Drawing.Size(107, 13);
             this.totalLabel2.TabIndex = 20;
+            this.totalLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // changeLabel1
             // 
             this.changeLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.changeLabel1.Location = new System.Drawing.Point(106, 319);
+            this.changeLabel1.Location = new System.Drawing.Point(138, 319);
             this.changeLabel1.Name = "changeLabel1";
-            this.changeLabel1.Size = new System.Drawing.Size(191, 19);
+            this.changeLabel1.Size = new System.Drawing.Size(107, 18);
             this.changeLabel1.TabIndex = 21;
-            this.changeLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.changeLabel1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(163, 46);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(36, 20);
+            this.numericUpDown1.TabIndex = 22;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(163, 74);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(36, 20);
+            this.numericUpDown2.TabIndex = 23;
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.Location = new System.Drawing.Point(163, 100);
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(36, 20);
+            this.numericUpDown3.TabIndex = 24;
             // 
             // footyStore
             // 
@@ -287,6 +286,9 @@ namespace CashRegister
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = global::CashRegister.Properties.Resources.istockphoto_1199644427_170667a;
             this.ClientSize = new System.Drawing.Size(527, 412);
+            this.Controls.Add(this.numericUpDown3);
+            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.changeLabel1);
             this.Controls.Add(this.totalLabel2);
             this.Controls.Add(this.taxLabel2);
@@ -302,9 +304,6 @@ namespace CashRegister
             this.Controls.Add(this.subLabel);
             this.Controls.Add(this.receiptLabel);
             this.Controls.Add(this.calculateButton);
-            this.Controls.Add(this.jerseyTextBox);
-            this.Controls.Add(this.cleatsTextBox);
-            this.Controls.Add(this.footballTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ballLabel);
@@ -313,6 +312,10 @@ namespace CashRegister
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "footyStore";
             this.Text = "Footy Store";
+            this.Load += new System.EventHandler(this.footyStore_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,9 +327,6 @@ namespace CashRegister
         private System.Windows.Forms.Label ballLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox footballTextBox;
-        private System.Windows.Forms.TextBox cleatsTextBox;
-        private System.Windows.Forms.TextBox jerseyTextBox;
         private System.Windows.Forms.Button calculateButton;
         private System.Windows.Forms.Label receiptLabel;
         private System.Windows.Forms.Label subLabel;
@@ -342,6 +342,9 @@ namespace CashRegister
         private System.Windows.Forms.Label taxLabel2;
         private System.Windows.Forms.Label totalLabel2;
         private System.Windows.Forms.Label changeLabel1;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
     }
 }
 

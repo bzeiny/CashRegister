@@ -57,32 +57,44 @@ namespace CashRegister
 
 
                 //Grab the ammount that the user has typed into the box, store and convert it. 
-                footballAmmount = Convert.ToInt32(footballTextBox.Text);
-                cleatAmmount = Convert.ToInt32(cleatsTextBox.Text);
-                jerseyAmmount = Convert.ToInt32(jerseyTextBox.Text);
-                footballCost = footballAmmount * footballPrice;
-                jerseyCost = jerseyAmmount * jerseyPrice;
-                cleatCost = cleatAmmount * cleatPrice;
-                //Calculations of the total cost and cost after tax, after reading what the user has entrered into the respective textboxes.
-                totalCost = footballAmmount * footballPrice + cleatAmmount * cleatPrice + jerseyAmmount * jerseyPrice;
-                taxAmmount = totalCost * taxRate;
-                afterTax = totalCost + taxAmmount;
-                printButton.Enabled = true;
+                footballAmmount = Convert.ToInt32(numericUpDown1.Text);
+                cleatAmmount = Convert.ToInt32(numericUpDown2.Text);
+                jerseyAmmount = Convert.ToInt32(numericUpDown3.Text);
 
-                //Display the calculations above in the Sub total label, the tax label, and the after tax label
-                subLabel2.Text = $"{totalCost.ToString("C")}";
-                taxLabel2.Text = $"{taxAmmount.ToString("C")}";
-                totalLabel2.Text = $"{afterTax.ToString("C")}";
-                //Play "kaching" sound effect when presented with total
-                SoundPlayer player = new SoundPlayer(Properties.Resources.kaching);
-                player.Play();
+                if (footballAmmount == 0 && cleatAmmount == 0 && jerseyAmmount == 0)
+                {
+                    subLabel2.Text = "Enter a number!";
+                    taxLabel2.Text = "";
+                    totalLabel2.Text = "";
+                    SoundPlayer player = new SoundPlayer(Properties.Resources.error);
+                    player.Play();
+                    printButton.Enabled = false;
+                }
+                else
+                {
+                    footballCost = footballAmmount * footballPrice;
+                    jerseyCost = jerseyAmmount * jerseyPrice;
+                    cleatCost = cleatAmmount * cleatPrice;
+                    //Calculations of the total cost and cost after tax, after reading what the user has entrered into the respective textboxes.
+                    totalCost = footballAmmount * footballPrice + cleatAmmount * cleatPrice + jerseyAmmount * jerseyPrice;
+                    taxAmmount = totalCost * taxRate;
+                    afterTax = totalCost + taxAmmount;
+                    printButton.Enabled = false;
+
+                    //Display the calculations above in the Sub total label, the tax label, and the after tax label
+                    subLabel2.Text = $"{totalCost.ToString("C")}";
+                    taxLabel2.Text = $"{taxAmmount.ToString("C")}";
+                    totalLabel2.Text = $"{afterTax.ToString("C")}";
+                    //Play "kaching" sound effect when presented with total
+                    SoundPlayer player = new SoundPlayer(Properties.Resources.kaching);
+                    player.Play();
+
+                }
             }
             catch
             {
-                jerseyTextBox.Text = "";
-                cleatsTextBox.Text = "";
-                footballTextBox.Text = "Enter a number!";
-                footballTextBox.Focus();
+
+
                 SoundPlayer player2 = new SoundPlayer(Properties.Resources.error);
 
                 player2.Play();
@@ -118,7 +130,7 @@ namespace CashRegister
 
                         player1.Play();
                     }
-
+                    else printButton.Enabled = true;
                 }
             }
             catch
@@ -149,22 +161,28 @@ namespace CashRegister
             receiptLabel.Text += $"Fedes Footy Fanatics\n\n\nOrder #{++orderNumber}\n{receiptLabel.Text = DateTime.Now.ToString("dd-MM-yy")} {receiptLabel.Text = DateTime.Now.ToString("hh:mm tt")} ";
             Refresh();
             Thread.Sleep(1600);
-            receiptLabel.Text += $"\n\nFootballs x{footballAmmount} {footballCost.ToString("C")}";
+            receiptLabel.Text += $"\n\nFootballs  x{footballAmmount} {footballCost.ToString("C")}";
             Refresh();
             Thread.Sleep(1600);
-            receiptLabel.Text += $"\nCleats x{cleatAmmount} {cleatCost.ToString("C")}";
+            receiptLabel.Text += $"\nCleats     x{cleatAmmount} {cleatCost.ToString("C")}";
             Refresh();
             Thread.Sleep(1600);
-            receiptLabel.Text += $"\nJerseys x{ jerseyAmmount} {jerseyCost.ToString("C")}";
+            receiptLabel.Text += $"\nJerseys    x{jerseyAmmount} {jerseyCost.ToString("C")}";
             Refresh();
             Thread.Sleep(1600);
-            receiptLabel.Text += $"\n\nSubtotal:{totalCost.ToString("C")}";
+            receiptLabel.Text += $"\n\nSubtotal:     {totalCost.ToString("C")}";
             Refresh();
             Thread.Sleep(1600);
-            receiptLabel.Text += $"\nTax:{taxAmmount.ToString("C")}";
+            receiptLabel.Text += $"\nTax:          {taxAmmount.ToString("C")}";
             Refresh();
             Thread.Sleep(1600);
-            receiptLabel.Text += $"\nTotal:{afterTax.ToString("C")}";
+            receiptLabel.Text += $"\nTotal:        {afterTax.ToString("C")}";
+            Refresh();
+            Thread.Sleep(1600);
+            receiptLabel.Text += $"\n\nTendered:     {tenderedPaid.ToString("C")}";
+            Refresh();
+            Thread.Sleep(1600);
+            receiptLabel.Text += $"\nChange Due:   {changeDue.ToString("C")}";
             Refresh();
             Thread.Sleep(1600);
             receiptLabel.Text += $"\n\nThank you for visiting Fedes Footy Fanatics!";
@@ -175,12 +193,12 @@ namespace CashRegister
 
         private void newButton_Click(object sender, EventArgs e)
         {
-            printButton.Enabled = true;
+            printButton.Enabled = false;
             //Reset all variables to 0 after a new order is placed, enable another receipt to be printed with accurate information
             receiptLabel.Text = "";
-            footballTextBox.Text = "";
-            cleatsTextBox.Text = "";
-            jerseyTextBox.Text = "";
+            numericUpDown1.Text = "0";
+            numericUpDown2.Text = "0";
+            numericUpDown3.Text = "0";
             subLabel2.Text = "";
             taxLabel2.Text = "";
             totalLabel2.Text = "";
@@ -212,6 +230,11 @@ namespace CashRegister
         private void jerseyTextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void footyStore_Load(object sender, EventArgs e)
+        {
+            printButton.Enabled = false;
         }
     }
 }
