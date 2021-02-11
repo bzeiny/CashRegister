@@ -170,7 +170,7 @@ namespace CashRegister
             // 
             this.tenderedBox.Location = new System.Drawing.Point(163, 237);
             this.tenderedBox.Name = "tenderedBox";
-            this.tenderedBox.Size = new System.Drawing.Size(100, 20);
+            this.tenderedBox.Size = new System.Drawing.Size(36, 20);
             this.tenderedBox.TabIndex = 13;
             this.tenderedBox.TextChanged += new System.EventHandler(this.tenderedBox_TextChanged);
             // 
