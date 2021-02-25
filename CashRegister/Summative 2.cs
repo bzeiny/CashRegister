@@ -1,4 +1,9 @@
-﻿using System;
+﻿//Bilal Zeineddine
+//Footy Store Cash Register
+//February 11 2020
+
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,19 +41,6 @@ namespace CashRegister
         double tenderedPaid = 0;
         double changeDue = 0;
 
-
-
-
-        public footyStore()
-        {
-            InitializeComponent();
-        }
-
-        private void subLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void calculateButton_Click(object sender, EventArgs e)
         //Create a try catch block in order to prevent crashing if anything other than whole digits is entered into the textbox
         {
@@ -57,9 +49,9 @@ namespace CashRegister
 
 
                 //Grab the ammount that the user has typed into the box, store and convert it. 
-                footballAmmount = Convert.ToInt32(numericUpDown1.Text);
-                cleatAmmount = Convert.ToInt32(numericUpDown2.Text);
-                jerseyAmmount = Convert.ToInt32(numericUpDown3.Text);
+                footballAmmount = Convert.ToInt32(footballAmount.Text);
+                cleatAmmount = Convert.ToInt32(cleatAmount.Text);
+                jerseyAmmount = Convert.ToInt32(jerseyAmount.Text);
 
                 if (footballAmmount == 0 && cleatAmmount == 0 && jerseyAmmount == 0)
                 {
@@ -145,9 +137,6 @@ namespace CashRegister
             }
         }
 
-
-
-
         private void printButton_Click(object sender, EventArgs e)
         {
             printButton.Enabled = false;
@@ -186,9 +175,6 @@ namespace CashRegister
             Refresh();
             Thread.Sleep(1600);
             receiptLabel.Text += $"\n\nThank you for visiting Fedes Footy Fanatics!";
-
-
-
         }
 
         private void newButton_Click(object sender, EventArgs e)
@@ -196,9 +182,9 @@ namespace CashRegister
             printButton.Enabled = false;
             //Reset all variables to 0 after a new order is placed, enable another receipt to be printed with accurate information
             receiptLabel.Text = "";
-            numericUpDown1.Text = "0";
-            numericUpDown2.Text = "0";
-            numericUpDown3.Text = "0";
+            footballAmount.Text = "0";
+            cleatAmount.Text = "0";
+            jerseyAmount.Text = "0";
             subLabel2.Text = "";
             taxLabel2.Text = "";
             totalLabel2.Text = "";
@@ -213,23 +199,6 @@ namespace CashRegister
             totalCost = 0;
             taxAmmount = 0;
             afterTax = 0;
-
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tenderedBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void jerseyTextBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void footyStore_Load(object sender, EventArgs e)

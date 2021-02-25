@@ -32,8 +32,8 @@ namespace CashRegister
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(footyStore));
             this.footyLabel = new System.Windows.Forms.Label();
             this.ballLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.cleatLabel = new System.Windows.Forms.Label();
+            this.jerseyLabel = new System.Windows.Forms.Label();
             this.calculateButton = new System.Windows.Forms.Button();
             this.receiptLabel = new System.Windows.Forms.Label();
             this.subLabel = new System.Windows.Forms.Label();
@@ -49,12 +49,12 @@ namespace CashRegister
             this.taxLabel2 = new System.Windows.Forms.Label();
             this.totalLabel2 = new System.Windows.Forms.Label();
             this.changeLabel1 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            this.footballAmount = new System.Windows.Forms.NumericUpDown();
+            this.cleatAmount = new System.Windows.Forms.NumericUpDown();
+            this.jerseyAmount = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.footballAmount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cleatAmount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jerseyAmount)).BeginInit();
             this.SuspendLayout();
             // 
             // footyLabel
@@ -80,28 +80,27 @@ namespace CashRegister
             this.ballLabel.Text = "Number Of Footballs:";
             this.ballLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // cleatLabel
             // 
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(-10, 69);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 29);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Pairs Of Cleats";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.cleatLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cleatLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cleatLabel.Location = new System.Drawing.Point(-10, 69);
+            this.cleatLabel.Name = "cleatLabel";
+            this.cleatLabel.Size = new System.Drawing.Size(135, 29);
+            this.cleatLabel.TabIndex = 2;
+            this.cleatLabel.Text = "Pairs Of Cleats";
+            this.cleatLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // jerseyLabel
             // 
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(2, 103);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Number Of Jerseys:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.jerseyLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.jerseyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jerseyLabel.Location = new System.Drawing.Point(2, 103);
+            this.jerseyLabel.Name = "jerseyLabel";
+            this.jerseyLabel.Size = new System.Drawing.Size(143, 17);
+            this.jerseyLabel.TabIndex = 3;
+            this.jerseyLabel.Text = "Number Of Jerseys:";
+            this.jerseyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // calculateButton
             // 
@@ -137,7 +136,6 @@ namespace CashRegister
             this.subLabel.Size = new System.Drawing.Size(100, 23);
             this.subLabel.TabIndex = 9;
             this.subLabel.Text = "Sub Total:";
-            this.subLabel.Click += new System.EventHandler(this.subLabel_Click);
             // 
             // taxLabel
             // 
@@ -172,7 +170,6 @@ namespace CashRegister
             this.tenderedBox.Name = "tenderedBox";
             this.tenderedBox.Size = new System.Drawing.Size(36, 20);
             this.tenderedBox.TabIndex = 13;
-            this.tenderedBox.TextChanged += new System.EventHandler(this.tenderedBox_TextChanged);
             // 
             // changeButton
             // 
@@ -258,26 +255,26 @@ namespace CashRegister
             this.changeLabel1.TabIndex = 21;
             this.changeLabel1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // numericUpDown1
+            // footballAmount
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(163, 46);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(36, 20);
-            this.numericUpDown1.TabIndex = 22;
+            this.footballAmount.Location = new System.Drawing.Point(163, 46);
+            this.footballAmount.Name = "footballAmount";
+            this.footballAmount.Size = new System.Drawing.Size(36, 20);
+            this.footballAmount.TabIndex = 22;
             // 
-            // numericUpDown2
+            // cleatAmount
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(163, 74);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(36, 20);
-            this.numericUpDown2.TabIndex = 23;
+            this.cleatAmount.Location = new System.Drawing.Point(163, 74);
+            this.cleatAmount.Name = "cleatAmount";
+            this.cleatAmount.Size = new System.Drawing.Size(36, 20);
+            this.cleatAmount.TabIndex = 23;
             // 
-            // numericUpDown3
+            // jerseyAmount
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(163, 100);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(36, 20);
-            this.numericUpDown3.TabIndex = 24;
+            this.jerseyAmount.Location = new System.Drawing.Point(163, 100);
+            this.jerseyAmount.Name = "jerseyAmount";
+            this.jerseyAmount.Size = new System.Drawing.Size(36, 20);
+            this.jerseyAmount.TabIndex = 24;
             // 
             // footyStore
             // 
@@ -286,9 +283,9 @@ namespace CashRegister
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = global::CashRegister.Properties.Resources.istockphoto_1199644427_170667a;
             this.ClientSize = new System.Drawing.Size(527, 412);
-            this.Controls.Add(this.numericUpDown3);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.jerseyAmount);
+            this.Controls.Add(this.cleatAmount);
+            this.Controls.Add(this.footballAmount);
             this.Controls.Add(this.changeLabel1);
             this.Controls.Add(this.totalLabel2);
             this.Controls.Add(this.taxLabel2);
@@ -304,8 +301,8 @@ namespace CashRegister
             this.Controls.Add(this.subLabel);
             this.Controls.Add(this.receiptLabel);
             this.Controls.Add(this.calculateButton);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.jerseyLabel);
+            this.Controls.Add(this.cleatLabel);
             this.Controls.Add(this.ballLabel);
             this.Controls.Add(this.footyLabel);
             this.ForeColor = System.Drawing.Color.White;
@@ -313,9 +310,9 @@ namespace CashRegister
             this.Name = "footyStore";
             this.Text = "Footy Store";
             this.Load += new System.EventHandler(this.footyStore_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.footballAmount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cleatAmount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jerseyAmount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -325,8 +322,8 @@ namespace CashRegister
 
         private System.Windows.Forms.Label footyLabel;
         private System.Windows.Forms.Label ballLabel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label cleatLabel;
+        private System.Windows.Forms.Label jerseyLabel;
         private System.Windows.Forms.Button calculateButton;
         private System.Windows.Forms.Label receiptLabel;
         private System.Windows.Forms.Label subLabel;
@@ -342,9 +339,9 @@ namespace CashRegister
         private System.Windows.Forms.Label taxLabel2;
         private System.Windows.Forms.Label totalLabel2;
         private System.Windows.Forms.Label changeLabel1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown footballAmount;
+        private System.Windows.Forms.NumericUpDown cleatAmount;
+        private System.Windows.Forms.NumericUpDown jerseyAmount;
     }
 }
 
